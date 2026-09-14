@@ -1,0 +1,23 @@
+format_version = 6
+id = "red-sun.movie-layout"
+version = "1.0.0"
+name = "Movie Layout"
+author = "PSX Ports"
+description = "Center Red Sun's movies within the NTSC display."
+resolver = "declarative"
+save_compatibility = "shared"
+
+[[target]]
+game_id = "SLUS-00866"
+
+[[feature]]
+id = "center-fmv"
+name = "Center movies"
+description = "Center each movie according to its height and show the full picture. Turn off to retain the original game's fixed movie position."
+group = "Visual"
+default_enabled = true
+
+[[plugin]]
+feature = "center-fmv"
+id = "red-sun.center-fmv"
+

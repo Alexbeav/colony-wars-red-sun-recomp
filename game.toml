@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Colony Wars: Red Sun"
+id = "SLUS-00866"
+players = 2
+exe = "disc/SLUS_008.66"
+disc = "disc/Colony Wars - Red Sun (USA).cue"
+load_address = "0x80018000"
+entry_pc = "0x80021CEC"
+text_size = "0x000A8000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Colony Wars - Red Sun (USA).bin"
+cue_name = "Colony Wars - Red Sun (USA).cue"
+boot_exe = "SLUS_008.66"
+known_sizes = [697450320]
+known_md5 = [
+  "978507959bab6666b96fbb222c40b1f6",
+]
+known_sha1 = [
+  "a2e9b43caac15c2afc63781947428bd64a735e2e",
+]
+known_crc32 = [
+  "d475b99c",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+# Accepted title-side fix: Generate emits the mod plugin entry call at
+# these functions (see mods/).
+mod_function_entry_funcs = ["0x8007FAD0"]
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+window_title = "Colony Wars: Red Sun Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "189bbc14de99c4eb1b21bc35ebf4971dafa301088bfc696391062c8b4f088693"

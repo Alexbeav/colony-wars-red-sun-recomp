@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Colony Wars: Red Sun",
+    "id": "SLUS-00866",
+    "boot_exe": "SLUS_008.66"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "USA",
+    "players": 2
+  },
+  "rom_identity": {
+    "cue_name": "Colony Wars - Red Sun (USA).cue",
+    "bin_name": "Colony Wars - Red Sun (USA).bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 697450320,
+      "md5": "978507959bab6666b96fbb222c40b1f6",
+      "sha1": "a2e9b43caac15c2afc63781947428bd64a735e2e",
+      "crc32": "d475b99c"
+    },
+    "disc_fp": "189bbc14de99c4eb1b21bc35ebf4971dafa301088bfc696391062c8b4f088693"
+  },
+  "exe": {
+    "load_address": "0x80018000",
+    "entry_pc": "0x80021CEC",
+    "text_size": "0x000A8000",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 983,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK \u2014 Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}
